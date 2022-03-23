@@ -35,6 +35,9 @@ html {
     font-feature-settings: "ss01" 1, "ss03" 1;
     /*Colors*/
     --accent-color: 246 43 165;
+    --primary-color: rgb(2, 2, 39);
+    --nav-color: 2, 2, 39;
+    --secondary-color: rgb(17, 17, 61);
 }
 
 body {
@@ -56,6 +59,10 @@ abbr:where([title]) {
 h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
+}
+
+h1 {
+    font-family: Jost, sans-serif;
 }
 
 a {
@@ -258,12 +265,18 @@ img, video {
     width: 100%
 }
 
-#social-nav {
+.social-nav {
     display: flex;
     position: fixed;
     flex-direction: column;
     bottom: 5%;
     left: 2%;
+    z-index: 1;
+}
+
+.primary-nav {
+    background: linear-gradient(rgba(var(--nav-color), 1), 85%,  rgba(var(--nav-color), 0.1));
+    /* background-color:   rgba(var(--nav-color), 0.5);     */
 }
 
 @media (min-width:640px) {
@@ -297,7 +310,8 @@ img, video {
 }
 
 .bg-primary {
-    background-color: #141628
+    background-color: var(--primary-color);
+    position: relative;
 }
 
 .bg-button {
@@ -309,7 +323,27 @@ img, video {
 }
 
 .bg-section-two {
-    background-color: #1b1e32
+    background-color: var(--secondary-color);
+    position: relative;
+}
+
+.bg-primary + .bg-section-two::before, 
+.bg-section-two + .bg-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+}
+
+.bg-primary + .bg-section-two::before {
+    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
+}
+
+
+.bg-section-two + .bg-primary::before {
+    background-image: linear-gradient(var(--secondary-color), var(--primary-color));
 }
 
 html {
@@ -399,7 +433,8 @@ html {
 
 .sticky {
     position: -webkit-sticky;
-    position: sticky
+    position: sticky;
+    z-index: 1;
 }
 
 .top-0 {
@@ -529,6 +564,10 @@ html {
     grid-template-rows: repeat(3, minmax(0, 1fr))
 }
 
+.grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr))
+}
+
 .flex-row {
     flex-direction: row
 }
@@ -559,6 +598,10 @@ span.items-center {
 
 .justify-between {
     justify-content: space-between
+}
+
+.justify-around {
+    justify-content: space-around;
 }
 
 .justify-evenly {
@@ -800,6 +843,10 @@ span.items-center {
 
 .font-thin {
     font-weight: 100
+}
+
+.font-semimedium {
+    font-weight: 300;
 }
 
 .text-white {

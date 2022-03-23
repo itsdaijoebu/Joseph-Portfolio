@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
-    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css"
+        charset="utf-8" />
 
 
     <link rel="stylesheet" href="css/styles.css">
@@ -21,12 +22,12 @@
 <body class="bg-primary" id="top">
 
     <!-- Navbar -->
-    <header class="font-primary font-medium text-lg sticky top-0">
-        <nav class="bg-primary shadow-lg flex justify-between items-center mx-auto px-8 md:px-14 py-6 lg:px-24 w-full">
+    <header class="font-medium text-lg sticky top-0">
+        <nav class=" primary-nav shadow-lg flex justify-between items-center mx-auto px-8 md:px-14 py-6 lg:px-24 w-full">
             <div class="text-3xl font-bold text-white">Joseph Chan</div>
             <div class="hidden md:flex space-x-12 items-center text-white ">
                 <a href="#" class="text-selected-text">Home</a>
-                <a href="#about">About</a>
+                <a href="#about">About You</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">
@@ -37,7 +38,7 @@
             </div>
 
             <!-- Mobile menu -->
-            <div class="mobile-menu hidden md:hidden text-white mt-4">
+            <div class="primary-nav sticky mobile-menu hidden md:hidden text-white mt-4">
                 <a href="#about" class="block py-2 px-16 rounded text-lg hover:bg-gray-700">About</a>
                 <a href="#projects" class="block py-2 px-16 rounded text-lg hover:bg-gray-700">Projects</a>
                 <a href="#skills" class="block py-2 px-16 rounded text-lg hover:bg-gray-700">Skills</a>
@@ -61,7 +62,8 @@
         </nav>
     </header>
 
-    <nav id="social-nav" class="flex justify-center">
+    <!-- Socal Nav -->
+    <nav id="social-nav" class="social-nav flex justify-center">
         <a href="https://www.linkedin.com/in/joseph-ys-chan/" class="ext-links">
             <img width="46" height="45" src="/assets/linkedin-icon.svg" alt="Linkedin"
                 class="text-white -mt-1 hover:bg-accent rounded-md" />
@@ -80,9 +82,8 @@
         </a>
     </nav>
 
-
     <!-- About section -->
-    <section class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center" id="about">
+    <section class="bg-primary container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center" id="about">
 
         <!-- Left column -->
         <div class="w-full xl:w-2/5 p-12 overflow-hidden">
@@ -109,32 +110,29 @@
 
         <!-- Right column -->
         <div class="flex flex-col w-full p-2 xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
-            <h1
-                class="font-bold font-primary text-4xl text-white md:text-2xl lg:text-5xl text-center md:text-center">
-                Hello!<br> I'm <span class="main-font">Joseph Chan</span>, <br> a software developer
+            <h1 class="font-bold text-4xl text-white md:text-2xl lg:text-5xl text-center md:text-center">
+                Hello!<br> I'm <span class="main-font">Joseph Chan</span>, <br> a software developer.
             </h1>
-            <p
-                class="font-secondary text-white mt-20 text-2xl md:text-2xl lg:text-2xl text-center md:text-left">
+            <p class="font-semimedium text-white mt-20 text-2xl md:text-2xl lg:text-2xl text-center md:text-left">
                 Lately, there's been this idea kicking around in your head.
                 <br><br>It might be related to a business.
                 <br>It might be related to a passion.
-                <br>It might even be related to that box of filled with stuff from an old hobby you can't bring yourself to throw away.
-                <br><br> Whatever the idea is for, stop just thinking about it.
+                <br>It might even be related to that box of stuff from an old hobby you just can't bring yourself
+                to throw away.
+                <br><br> Whatever that idea is, stop just thinking about it.
                 <br>Let's bring it to life.
             </p>
-            <div class="flex space-x-10 my-2 md:items-center justify-center mb-16 mt-20">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+            <div class="flex space-x-10 my-2 md:items-center justify-around mb-16 mt-20">
+                <a href="#contact">
                     <button
-                        class="px-8 py-4 bg-button rounded-xl text-white font-bold font-primary flex items-center text-xl hover:border-2 hover:bg-slate-800">
+                        class="px-8 py-4 bg-button rounded-xl text-white font-bold flex items-center text-xl hover:border-2 hover:bg-slate-800">
                         Let's talk about it
                     </button>
                 </a>
 
-                <span class="items-center text-white text-x1 font-basement">OR</span>
-
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="#projects">
                     <button
-                        class="px-8 py-3 rounded-xl text-white font-bold font-primary flex items-center space-x-3 border-solid border-2 border-white text-xl hover:bg-slate-800">
+                        class="px-8 py-3 rounded-xl text-white font-bold flex items-center space-x-3 border-solid border-2 border-white text-xl hover:bg-slate-800">
                         See what I can do
                     </button>
                 </a>
@@ -149,35 +147,31 @@
         <div class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <!-- Left column -->
             <div class="flex flex-col w-full p-4 xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
+                <h1 class="font-semibold text-4xl text-white md:text-2xl lg:text-5xl text-left md:text-left ">
+                    What I've Built</h1>
                 <h1
-                    class="font-semibold font-primary text-4xl text-white md:text-2xl lg:text-5xl text-left md:text-left ">
-                    I Made This</h1>
-                <h1
-                    class="font-semibold font-primary text-xl text-white md:text-xl lg:text-3xl text-left md:text-left mt-12 underline decoration-slate-500">
-                    Project Name No. 1</h1>
-                <p class="main-font font-semibold font-secondary text-xl mt-16">Approach</p>
-                <p
-                    class="font-thin font-secondary text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
+                    class="font-semibold text-xl text-white md:text-xl lg:text-3xl text-left md:text-left mt-12 underline decoration-slate-500">
+                    The Quiz</h1>
+                <p class="main-font font-semibold text-xl mt-16">Approach</p>
+                <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, aliquid placeat? Beatae nam
                     porro dolore. Deleniti magnam ad quae nesciunt.</p>
-                <p
-                    class="font-thin font-secondary text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
+                <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, aliquid placeat? Beatae nam
                     porro dolore. Deleniti magnam ad quae nesciunt.</p>
-                <p class="main-font font-semibold font-secondary text-xl mt-16">Tech Stack</p>
-                <p
-                    class="font-thin font-secondary text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
+                <p class="main-font font-semibold text-xl mt-16">Tech Stack</p>
+                <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
                     React &nbsp Styled-Components &nbsp MongoDB</p>
                 <div class="flex space-x-8 my-2 md:items-center justify-center mb-16">
                     <a href="#" target="_blank" rel="noopener noreferrer">
                         <button
-                            class="px-8 py-3 rounded-xl text-white font-bold font-primary mt-16 flex items-center space-x-3 border-solid border-2 border-white text-xl sm:w-auto hover:border-2 hover:bg-slate-800">
+                            class="px-8 py-3 rounded-xl text-white font-bold mt-16 flex items-center space-x-3 border-solid border-2 border-white text-xl sm:w-auto hover:border-2 hover:bg-slate-800">
                             Live Demo
                         </button>
                     </a>
                     <a href="#" target="_blank" rel="noopener noreferrer">
                         <button
-                            class="px-8 py-4 bg-button rounded-xl text-white font-bold font-primary mt-16 flex items-center text-xl w-full sm:w-auto hover:border-2 hover:bg-slate-800">
+                            class="px-8 py-4 bg-button rounded-xl text-white font-bold mt-16 flex items-center text-xl w-full sm:w-auto hover:border-2 hover:bg-slate-800">
                             Source Code
                         </button>
                     </a>
@@ -191,8 +185,8 @@
                         <!-- scrolls to the second project -->
                         <a href="#project-two">
                             <button
-                                class="p-3 rounded-xl text-white font-bold font-primary border-solid border-2 border-accent hover:bg-slate-800">
-                                <span class="text-white text-sm font-secondary font-thin">Next</span>
+                                class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-slate-800">
+                                <span class="text-white text-sm font-semimedium">Next</span>
                             </button>
                         </a>
                         <div class="mx-5 mt-2">
@@ -210,31 +204,28 @@
             <!-- Left column -->
             <div class="flex flex-col w-full p-4 xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
                 <h1
-                    class="font-semibold font-primary text-xl text-white md:text-xl lg:text-3xl text-left md:text-left mt-5 underline decoration-slate-500">
+                    class="font-semibold text-xl text-white md:text-xl lg:text-3xl text-left md:text-left mt-5 underline decoration-slate-500">
                     Project Name No. 2</h1>
-                <p class="main-font font-semibold font-secondary text-xl mt-16 ">Approach</p>
-                <p
-                    class="font-thin font-secondary text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
+                <p class="main-font font-semibold text-xl mt-16 ">Approach</p>
+                <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, aliquid placeat? Beatae nam
                     porro dolore. Deleniti magnam ad quae nesciunt.</p>
-                <p
-                    class="font-thin font-secondary text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
+                <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, aliquid placeat? Beatae nam
                     porro dolore. Deleniti magnam ad quae nesciunt.</p>
-                <p class="main-font font-semibold font-secondary text-xl mt-16">Tech Stack</p>
-                <p
-                    class="font-thin font-secondary text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
+                <p class="main-font font-semibold text-xl mt-16">Tech Stack</p>
+                <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
                     JavaScript &nbsp CSS &nbsp Supabase</p>
                 <div class="flex space-x-8 my-2 md:items-center justify-center mb-16">
                     <a href="html/index.html" target="_blank" rel="noopener noreferrer">
                         <button
-                            class="px-8 py-3 rounded-xl text-white font-bold font-primary mt-16 flex items-center space-x-3 border-solid border-2 border-white text-xl sm:w-auto hover:border-2 hover:bg-slate-800">
+                            class="px-8 py-3 rounded-xl text-white font-bold mt-16 flex items-center space-x-3 border-solid border-2 border-white text-xl sm:w-auto hover:border-2 hover:bg-slate-800">
                             <span>Live Demo</span>
                         </button>
                     </a>
                     <a href="html/index.html" target="_blank" rel="noopener noreferrer">
                         <button
-                            class="px-8 py-4 bg-button rounded-xl text-white font-bold font-primary mt-16 flex items-center text-xl w-full sm:w-auto hover:border-2 hover:bg-slate-800">
+                            class="px-8 py-4 bg-button rounded-xl text-white font-bold mt-16 flex items-center text-xl w-full sm:w-auto hover:border-2 hover:bg-slate-800">
                             <span class="">Source Code</span>
                         </button>
                     </a>
@@ -246,8 +237,8 @@
                 <div class="flex items-center mt-10 justify-center">
                     <div>
                         <button
-                            class="p-3 rounded-xl text-white font-bold font-primary border-solid border-2 border-accent hover:bg-slate-800">
-                            <span class="text-white text-sm font-secondary font-thin">Next</span>
+                            class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-slate-800">
+                            <span class="text-white text-sm font-semimedium">Next</span>
                         </button>
                         <div class="mx-5 mt-2">
                             <span class="m_scroll_arrows one"></span>
@@ -265,12 +256,11 @@
     <section class="bg-primary mb-20" id="skills">
         <div class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <div class="flex flex-col w-full p-4 xl:w-2/5 justify-center lg:items-start">
-                <h1
-                    class="font-semibold font-primary text-4xl text-white mb-20 md:text-2xl lg:text-5xl text-left md:text-left">
+                <h1 class="font-semibold text-4xl text-white mb-20 md:text-2xl lg:text-5xl text-left md:text-left">
                     Skills & Tools</h1>
-                <p class="text-accent font-medium font-secondary text-3xl">Development</p>
+                <p class="text-accent font-medium text-3xl">Development</p>
                 <div class="flex justify-between">
-                    <div class="grid grid-rows-3 md:grid-rows-1 grid-flow-col gap-y-10 gap-x-16 mt-10 shrink-0 mx-auto">
+                    <div class="grid grid-rows-2 md:grid-rows-1 grid-flow-col gap-y-10 gap-x-16 mt-10 shrink-0 mx-auto">
                         <!-- Skills icons -->
                         <div>
                             <img width="50" height="50" src="/assets/html.svg" />
@@ -296,32 +286,30 @@
     <section class="bg-section-two" id="contact">
         <div class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <div class="flex flex-col w-full xl:w-3/5 p-5 pb-24 justify-center lg:items-start overflow-y-hidden">
-                <h1
-                    class="font-semibold font-primary text-4xl text-white md:text-2xl lg:text-5xl text-left md:text-left ">
+                <h1 class="font-semibold text-4xl text-white md:text-2xl lg:text-5xl text-left md:text-left ">
                     Contact</h1>
                 <form class="w-full">
                     <div class="mb-6 mt-20">
-                        <label for="name" class="block mb-2 font-bold text-lg font-primary main-font">Full Name</label>
+                        <label for="name" class="block mb-2 font-bold text-lg main-font">Full Name</label>
                         <input type="name" id="email"
                             class="bg-primary text-gray-900 text-sm rounded-lg block w-full p-5 dark:text-white focus:outline-none focus:ring focus:border-main-font"
                             required>
                     </div>
                     <div class="mb-6">
-                        <label for="email" class="block mb-2 text-lg font-bold font-primary main-font">Email</label>
+                        <label for="email" class="block mb-2 text-lg font-bold main-font">Email</label>
                         <input type="email" id="password"
                             class="bg-primary text-gray-900 text-sm rounded-lg  block w-full p-5  dark:text-white focus:outline-none focus:ring focus:border-main-font"
                             placeholder="you@email.com" required>
                     </div>
                     <div class="flex items-start mb-6">
                         <div class="container">
-                            <label for="message"
-                                class="block mb-2 text-lg font-bold font-primary main-font">Message</label>
+                            <label for="message" class="block mb-2 text-lg font-bold main-font">Message</label>
                             <textarea id="message" rows="5"
                                 class=" block rounded-lg bg-primary dark:text-white w-full p-3 focus:outline-none focus:ring focus:border-main-font"></textarea>
                         </div>
                     </div>
                     <button type="submit"
-                        class="text-white text-xl bg-button rounded-lg w-full sm:w-auto px-8 py-3 mt-8 bg-button text-center font-bold font-primary hover:border-2 hover:bg-slate-800">Send</button>
+                        class="text-white text-xl bg-button rounded-lg w-full sm:w-auto px-8 py-3 mt-8 bg-button text-center font-bold hover:border-2 hover:bg-slate-800">Send</button>
                 </form>
             </div>
             <div class="w-full xl:w-2/5 p-12 overflow-hidden">
@@ -336,7 +324,7 @@
         <div class="container flex flex-row flex-wrap justify-evenly">
             <div class="flex flex-row flex-wrap  md:flex-col justify-center items-center">
                 <div class="flex mt-16 mb-6 flex-row space-x-6 justify-center">
-                    <h1 class="text-white font-secondary font-bold text-lg">Socials</h1>
+                    <h1 class="text-white font-bold text-lg">Socials</h1>
                     <a href="#" class="">
                         <img width="36" height="45" src="/assets/linkedin-icon.svg" alt="Linkedin"
                             class="text-white -mt-1" />
@@ -354,7 +342,7 @@
                     </a>
                 </div>
                 <div class="mt-6 mb-16">
-                    <p class="main-font text-lg font-secondary">
+                    <p class="main-font text-lg">
                         @yourname 2022
                     </p>
                 </div>
@@ -363,7 +351,7 @@
         <div class="flex relative">
             <a class="flex absolute bottom-0 right-0" href="#top">
                 <button
-                    class="p-3 rounded-xl text-white font-bold font-primary border-solid border-2 border-accent hover:border-2 hover:bg-slate-800 absolute bottom-0 right-0">
+                    class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:border-2 hover:bg-slate-800 absolute bottom-0 right-0">
                     Top
                 </button>
             </a>
