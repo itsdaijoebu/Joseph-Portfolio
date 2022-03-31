@@ -56,17 +56,26 @@ window.addEventListener("scroll", () => {
 //Google sheets contact form
 // window.addEventListener("load", function() {
 const contactForm = document.getElementById('contact-form');
+const contactSubmit = document.getElementById('submit-contact');
 contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const data = new FormData(contactForm);
     const action = e.target.action;
+    contactSubmit.innerText = "Sending..."
+    contactSubmit.style = "pointer-events: none"
     fetch(action, {
         method: 'POST',
         body: data,
     })
         .then(() => {
-            alert("Success!");
+
+            contactSubmit.innerText = "Success!"
+            contactForm.reset();
+            setTimeout(() => {
+                contactSubmit.innerText = "Send"
+                contactSubmit.style = "pointer-events: auto"
+            }, 1500)
+
         })
-    contactForm.reset();
 });
 //   });

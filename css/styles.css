@@ -67,6 +67,9 @@ html {
     /* --accent-color: 240 200 16; */
     --white: 229 218 218;
     /* color: #e5dada; */
+
+    /* hover color */
+    --button-hover: 30 41 59
 }
 
 body {
@@ -114,10 +117,9 @@ b, strong {
 }
 
 i {
-    font-size: 2rem;
+    font-size: 1.9rem;
     color: rgb(var(--white));
 }
-
 
 i:hover {
     color: rgb(var(--accent-color));
@@ -172,7 +174,7 @@ button, select {
     background-image: none
 }
 
-/* submit animation */
+/* submit stuff */
 
 
 
@@ -333,7 +335,7 @@ img, video {
     display: flex;
     position: fixed;
     flex-direction: column;
-    bottom: 5%;
+    bottom: 8%;
     left: 2%;
     z-index: 1;
 }
@@ -341,6 +343,10 @@ img, video {
 .primary-nav {
     background: linear-gradient(rgba(var(--nav-color), 1), 80%,  rgba(var(--nav-color), 0.1));
     /* background-color: rgba(var(--nav-color), 0.5);     */
+}
+
+.primary-nav a:hover {
+    color: rgb(var(--accent-color))
 }
 
 @media (min-width:640px) {
@@ -352,6 +358,12 @@ img, video {
 @media (min-width:768px) {
     .container {
         max-width: 768px
+    }
+}
+
+@media (max-width: 900px) {
+    nav.social-nav {
+        display: none;
     }
 }
 
@@ -978,12 +990,12 @@ span.items-center {
 
 .hover\:bg-highlight-800:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(30 41 59/var(--tw-bg-opacity))
+    background-color: rgb(var(--button-hover)/var(--tw-bg-opacity))
 }
 
 .active-nav-item .bg-button {
     --tw-bg-opacity: 1;
-    background-color: rgb(30 41 59/var(--tw-bg-opacity));
+    background-color: rgb(var(--button-hover)/var(--tw-bg-opacity));
     border-width: 2px;
     color: rgb(var(--accent-color));
 }
