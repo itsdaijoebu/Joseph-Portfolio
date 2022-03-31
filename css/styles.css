@@ -113,6 +113,16 @@ b, strong {
     font-weight: bolder
 }
 
+i {
+    font-size: 2rem;
+    color: rgb(var(--white));
+}
+
+
+i:hover {
+    color: rgb(var(--accent-color));
+}
+
 code, kbd, pre, samp {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
     font-size: 1em;

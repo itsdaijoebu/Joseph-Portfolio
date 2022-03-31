@@ -1,6 +1,6 @@
 <!-- 
     TO DO: 
-    - Increase margin around main container
+    - Increase margin around main container?
     - Change social buttons to text icons to make them easier to style
     - Change development tools graphics to text icons to make them easier to style
     - Make contact form submit button animate on submission (slowly change color to show loading submission, then flip to "success" for a couple seconds before flipping back and resetting form. Don't forget to disable submit button while this is happening)
@@ -11,6 +11,8 @@
     - Remove orange backlight on logo and turn it into an animated backglow
     - Add avatar creator for "about you"
     - Add experimental controls
+    - Make it so that page still scrolls to sections based on ids clicked on in nav, but don't display them in the url
+     
  -->
 
 <!DOCTYPE html>
@@ -29,6 +31,11 @@
     <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css"
         charset="utf-8" />
+    <!-- fontello font icons -->
+    <link rel="stylesheet" href="css/fontello-codes.css">
+    <link rel="stylesheet" href="css/fontello-embedded.css">
+    <link rel="stylesheet" href="css/fontello.css">
+
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Using jQuery -->
@@ -90,25 +97,31 @@
     <!-- Socal Nav -->
     <nav id="social-nav" class="social-nav flex justify-center">
         <a href="https://www.linkedin.com/in/joseph-ys-chan/" class="ext-links">
-            <img width="46" height="45" src="/assets/linkedin-icon.svg" alt="Linkedin"
-                class="text-white -mt-1 hover:bg-accent rounded-md" />
+            <!-- <img width="46" height="45" src="/assets/linkedin-icon.svg" alt="Linkedin"
+                class="text-white -mt-1 hover:bg-accent rounded-md" /> -->
+            <i class="icon-linkedin"></i>
         </a>
         <a href="https://github.com/itsdaijoebu" class="ext-links">
-            <img width="47" height="40" src="/assets/github-icon.svg" alt="GitHub"
-                class=" text-white p-2 hover:bg-accent rounded-md" />
+            <!-- <img width="47" height="40" src="/assets/github-icon.svg" alt="GitHub"
+                class=" text-white p-2 hover:bg-accent rounded-md" /> -->
+            <i class="icon-github-circled-1"></i>
+
         </a>
         <a href="https://twitter.com/itsdaijoebu" class="ext-links">
-            <img width="45" height="35" src="/assets/twitter-icon.svg" alt="Twitter"
-                class="text-white  p-2 hover:bg-accent rounded-md" />
+            <!-- <img width="45" height="35" src="/assets/twitter-icon.svg" alt="Twitter"
+                class="text-white  p-2 hover:bg-accent rounded-md" /> -->
+            <i class="icon-twitter"></i>
         </a>
         <a href="mailto:joseph@josephchan.me" class="ext-links">
-            <img width="48" height="40" src="/assets/email-icon.svg" alt="Email"
-                class="text-white p-1 hover:bg-accent rounded-md" />
+            <!-- <img width="48" height="40" src="/assets/email-icon.svg" alt="Email"
+                class="text-white p-1 hover:bg-accent rounded-md" /> -->
+            <i class="icon-mail"></i>
         </a>
     </nav>
 
     <!-- Landing section -->
-    <section class="bg-primary container h-full mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center">
+    <section
+        class="bg-primary container h-full mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center">
         <!-- Left column -->
         <!-- <div class="w-full xl:w-2/5 p-12 overflow-hidden">
             <img src="/assets/images/you.jpg" alt="your name" class="rounded-3xl mx-auto w-full md:w-4/5 " />
@@ -149,7 +162,7 @@
     <section class="bg-primary" id="about-you">
         <!-- left column -->
         <div class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-            
+
             <!--right column-->
             <div class="flex flex-col w-full p-4 xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
                 <h2 class="font-semibold text-4xl text-white md:text-2xl lg:text-5xl text-center0 md:text-left ">
@@ -185,7 +198,7 @@
             <div class="w-full xl:w-2/5 p-12 overflow-hidden">
                 <img src="/assets/images/you.jpg" alt="your name" class="rounded-3xl mx-auto w-full md:w-4/5 " />
                 <!-- <div class="flex mt-16 mb-16 flex-row space-x-6 justify-center "> -->
-                    <!--     <a href="https://www.linkedin.com/in/joseph-ys-chan/" class="ext-links">
+                <!--     <a href="https://www.linkedin.com/in/joseph-ys-chan/" class="ext-links">
                         <img width="46" height="45" src="/assets/linkedin-icon.svg" alt="Linkedin"
                             class="text-white -mt-1 hover:bg-accent rounded-md" />
                     </a>
@@ -304,8 +317,9 @@
                 <h2 class="font-semibold text-4xl text-white md:text-2xl lg:text-5xl text-left md:text-left ">
                     Contact</h2>
 
-                <form id="contact-form" name="contact" method="POST" action="https://script.google.com/macros/s/AKfycbzAWQDy5qgkbmFy3FbFH4OwRr0kApdqIkn8cgAOLybSswVxgWtZx8zGmKEhV5JhJ_tr/exec"
-                 class="w-full">
+                <form id="contact-form" name="contact" method="POST"
+                    action="https://script.google.com/macros/s/AKfycbzAWQDy5qgkbmFy3FbFH4OwRr0kApdqIkn8cgAOLybSswVxgWtZx8zGmKEhV5JhJ_tr/exec"
+                    class="w-full">
                     <div class="mb-6 mt-20">
                         <label for="name" class="block mb-2 font-bold text-lg text-white">Full Name</label>
                         <input name="Name" type="text" id="name"
@@ -344,19 +358,25 @@
                 <div class="flex mt-16 mb-6 flex-row space-x-6 justify-center">
                     <!-- <h2 class="text-white font-bold text-lg">Socials</h2> -->
                     <a href="https://www.linkedin.com/in/joseph-ys-chan/" class="">
-                        <img width="36" height="45" src="/assets/linkedin-icon.svg" alt="Linkedin"
-                            class="text-white -mt-1" />
+                        <!-- <img width="36" height="45" src="/assets/linkedin-icon.svg" alt="Linkedin"
+                            class="text-white -mt-1" /> -->
+                            
+                         <i class="icon-linkedin"></i>
                     </a>
                     <a href="https://github.com/itsdaijoebu" class="">
-                        <img width="24" height="40" src="/assets/github-icon.svg" alt="GitHub"
-                            class=" text-white mt-1" />
+                        <!-- <img width="24" height="40" src="/assets/github-icon.svg" alt="GitHub"
+                            class=" text-white mt-1" /> -->
+                         <i class="icon-github-circled-1"></i>
+
                     </a>
                     <a href="https://twitter.com/itsdaijoebu" class="">
-                        <img width="25" height="35" src="/assets/twitter-icon.svg" alt="Twitter"
-                            class="text-white mt-1" />
-                    </a>
+                        <!-- <img width="25" height="35" src="/assets/twitter-icon.svg" alt="Twitter"
+                            class="text-white mt-1" /> -->
+                         <i class="icon-twitter"></i>
+                        </a>
                     <a href="mailto:joseph@josephchan.me" class="">
-                        <img width="32" height="40" src="/assets/email-icon.svg" alt="Email" class="text-white" />
+                        <!-- <img width="32" height="40" src="/assets/email-icon.svg" alt="Email" class="text-white" /> -->
+                        <i class="icon-mail"></i>
                     </a>
                 </div>
                 <div class="mt-6 mb-16">
