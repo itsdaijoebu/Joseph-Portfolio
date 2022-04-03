@@ -226,9 +226,9 @@
                 <h2 class="font-semibold text-4xl text-white md:text-2xl lg:text-5xl text-left md:text-left">What I've
                     Built</h2>
                 <h2
-                    class="font-semibold text-xl text-white md:text-xl lg:text-3xl text-left md:text-left mt-12 underline decoration-highlight-500">
+                    class="font-semibold text-xl text-accent md:text-xl lg:text-3xl text-left md:text-left mt-12 underline decoration-highlight-500">
                     The Quiz</h2>
-                <p class="text-accent font-semibold text-xl mt-16">Approach</p>
+                <!-- <p class="text-accent font-semibold text-xl mt-16">Approach</p> -->
                 <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
                     The client was leading a training seminar for the Ontario Association of Social Workers. She wanted to use a quiz to increase audience engagement. I gave her control of when the quiz would advance to the next question to allow for discussion time between questions and to ensure no participants could finish the quiz prematurely.</p>
                 <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
@@ -237,24 +237,26 @@
                 <p class=" text-accent font-medium mt-8 text-xl md:text-xl lg:text-xl text-left md:text-left">
                     Node &nbsp JS &nbsp MongoDB</p>
                 <div class="flex space-x-8 my-2 md:items-center justify-center mb-16">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/itsdaijoebu/OASW-Quiz-site" target="_blank" rel="noopener noreferrer">
                         <button
                             class="px-8 py-4 bg-button rounded-xl text-white font-bold mt-16 flex items-center text-xl w-full sm:w-auto hover:border-2 hover:bg-highlight-800">
                             Source Code
                         </button>
                     </a>
 
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <!-- <a href="https://oasw-aar-training-quiz.netlify.app" target="_blank" rel="noopener noreferrer">
                         <button
                             class="px-8 py-4 rounded-xl text-accent border-accent font-bold mt-16 flex items-center space-x-3 border-solid border-2 border-white text-xl sm:w-auto hover:border-2 hover:bg-highlight-800">
                             Live Demo
                         </button>
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <!-- Right column -->
             <div class="w-full xl:w-2/5 p-12 overflow-hidden md:pt-1">
-                <img src="/assets/images/project-one.jpg" alt="project name" class="rounded-3xl text-white" />
+                <video class="portfolio-video" loop muted playsinline>
+                    <source src="/assets/video/oasw quiz video.mp4" type="video/mp4">
+                </video>
                 <div class="flex items-center mt-10 justify-center">
                     <div>
                         <!-- scrolls to the second project -->
@@ -293,9 +295,6 @@
                             <img width="50" height="70" src="/assets/css.svg" />
                         </div>
                         <div>
-                            <img width="50" height="70" src="/assets/react.svg" />
-                        </div>
-                        <div>
                             <img width="50" height="70" src="/assets/js.svg" />
                         </div>
 
@@ -317,7 +316,7 @@
                     action="https://script.google.com/macros/s/AKfycbzAWQDy5qgkbmFy3FbFH4OwRr0kApdqIkn8cgAOLybSswVxgWtZx8zGmKEhV5JhJ_tr/exec"
                     class="w-full">
                     <div class="mb-6 mt-20">
-                        <label for="name" class="block mb-2 font-bold text-lg text-white">Full Name</label>
+                        <label for="name" class="block mb-2 font-bold text-lg text-white">Name</label>
                         <input name="Name" type="text" id="name"
                             class="bg-primary text-sm rounded-lg block w-full p-5 focus:outline-none focus:ring text-accent`"
                             required>
@@ -325,8 +324,7 @@
                     <div class="mb-6">
                         <label for="email" class="block mb-2 text-lg font-bold text-white">Email</label>
                         <input name="Email" type="email" id="email"
-                            class="bg-primary text-sm rounded-lg  block w-full p-5  focus:outline-none focus:ring text-accent"
-                            placeholder="YouAreAmazing@email.com" required>
+                            class="bg-primary text-sm rounded-lg  block w-full p-5  focus:outline-none focus:ring text-accent" required>
                     </div>
                     <div class="flex items-start mb-6">
                         <div class="container">

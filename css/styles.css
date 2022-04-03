@@ -267,6 +267,10 @@ img, video {
     height: auto
 }
 
+.portfolio-video {
+    border-radius: .75rem;
+}
+
 .logo-img {
     align-self: center;
     /* max-width: 80vw; */

@@ -53,6 +53,20 @@ window.addEventListener("scroll", () => {
     })
 })
 
+// Video behaviour
+let portfolioVideos = Array.from(document.querySelectorAll(".portfolio-video"))
+portfolioVideos.forEach(video => {
+    video.addEventListener("mouseover", playOnHover);
+    // video.addEventListener("mouseleave", pauseOffHover);
+})
+function playOnHover(e) {
+    e.target.play();
+}
+function pauseOffHover(e) {
+    e.target.pause();
+}
+
+
 //Google sheets contact form
 // window.addEventListener("load", function() {
 const contactForm = document.getElementById('contact-form');
