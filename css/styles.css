@@ -103,8 +103,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 5rem;
 }
 .h1-logo {
-    font-size: 5vh;
+    font-size: 4vh;
     /* line-height: 12vh; */
+    /* font-size: 2.5rem;
+    line-height: 2.5rem; */
 }
 
 a {
@@ -270,11 +272,14 @@ img, video {
 .portfolio-video {
     border-radius: .75rem;
 }
+.paused {
+    opacity: 0.6;
+}
 
 .logo-img {
     align-self: center;
     /* max-width: 80vw; */
-    max-height: 60vh;
+    /* max-height: 60vh; */
 }
 
 .nav-logo {
@@ -638,6 +643,10 @@ html {
     height: 2.5rem
 }
 
+.h-half {
+    height: 40vh;
+}
+
 .w-full {
     width: 100%
 }
@@ -684,6 +693,10 @@ html {
 
 .items-center {
     align-items: center
+}
+
+.items-end {
+    align-items: flex-end;
 }
 
 span.items-center {

@@ -1,3 +1,5 @@
+const today = new Date();
+
 // external link behavious
 const externalLinks = Array.from(document.querySelectorAll(`.ext-links`))
 externalLinks.forEach(link => link.addEventListener('click', newTab))
@@ -16,6 +18,10 @@ const menu = document.querySelector(".mobile-menu");
 btn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
 });
+
+const copyYear = document.querySelector("#year");
+copyYear.innerText = today.getFullYear();
+
 
 //highlight nav items on scroll
 const sections = document.querySelectorAll("section");
@@ -54,16 +60,28 @@ window.addEventListener("scroll", () => {
 })
 
 // Video behaviour
+let isPaused = false;
 let portfolioVideos = Array.from(document.querySelectorAll(".portfolio-video"))
 portfolioVideos.forEach(video => {
     video.addEventListener("mouseover", playOnHover);
+    video.addEventListener("click", clickPlayPause)
     // video.addEventListener("mouseleave", pauseOffHover);
 })
 function playOnHover(e) {
     e.target.play();
+    isPaused = false;
+    e.target.classList.remove('paused');
 }
 function pauseOffHover(e) {
     e.target.pause();
+}
+function clickPlayPause(e) {
+    if(isPaused) e.target.play();
+    else e.target.pause();
+    isPaused = !isPaused;
+
+    if(isPaused) e.target.classList.add('paused')
+    else e.target.classList.remove('paused')
 }
 
 
