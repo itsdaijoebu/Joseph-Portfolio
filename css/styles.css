@@ -1,4 +1,4 @@
-/*! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com*/
+/* ! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com */
 @font-face {
     font-family: 'aileron';
     src: url('fonts/Aileron-Regular-webfont.eot');
@@ -432,12 +432,12 @@ img, video {
     height: 50px;
 }
 
-.bg-primary + .bg-secondary::before {
+.bg-secondary::before {
     background-image: linear-gradient(var(--primary-color), var(--secondary-color));
 }
 
 
-.bg-secondary + .bg-primary::before {
+.bg-primary::before {
     background-image: linear-gradient(var(--secondary-color), var(--primary-color));
 }
 
@@ -1024,7 +1024,7 @@ span.items-center {
 
 .hover\:bg-mobile:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(248 0 149/var(--tw-bg-opacity))
+    background-color: rgb(var(--accent-color)/var(--tw-bg-opacity))
 }
 
 .hover\:bg-accent:hover {
