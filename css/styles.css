@@ -25,7 +25,7 @@
 
 *, :after, :before {
     box-sizing: border-box;
-    border: 0 solid #e5e7eb;
+    border: 0px solid #e5e7eb;
 }
 
 :after, :before {
@@ -73,6 +73,7 @@ html {
 }
 
 body {
+    /* padding: 0 10vw; */
     margin: 0;
     line-height: inherit;
 }
