@@ -613,6 +613,10 @@ html {
     margin-bottom: .5rem
 }
 
+.mb-4 {
+    margin-bottom: 1rem
+}
+
 .mt-1 {
     margin-top: .25rem
 }
@@ -1048,6 +1052,39 @@ span.items-center {
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
 }
 
+.icon-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-container.hero {
+    gap: 0.5rem;
+}
+
+.btn {
+    width: 75%;
+    justify-content: center;
+}
+.btn.hero {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.dev-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 @media (prefers-color-scheme:dark) {
     .dark\:text-white {
         --tw-text-opacity: 1;
@@ -1064,6 +1101,22 @@ span.items-center {
 @media (min-width:768px) {
     .md\:flex {
         display: flex
+    }
+
+    .btn-container {
+        flex-direction: row;
+    }
+    .btn-container.hero {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        gap: 2rem;
+    }
+
+    .btn {
+        width: auto;
+    }
+    .btn.hero {
+        padding: 1rem 2rem;
     }
 
     .md\:hidden {
