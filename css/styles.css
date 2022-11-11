@@ -51,11 +51,11 @@ html {
     /*actual space cadet*/
     /* --primary-color: #1d2951;
     --secondary-color: #283660; */
-    --white: 238 238 255;
+    /* --white: 238 238 255; */
     /* red */
     /* --accent-color: 193 73 83; */
     /* orange */
-    --accent-color: 245 183 105;
+    /* --accent-color: 245 183 105; */
     color: #F5B769;
 
     /* Prussian blue */
@@ -728,6 +728,8 @@ span.items-center {
     justify-content: space-evenly
 }
 
+
+
 .gap-y-10 {
     row-gap: 2.5rem
 }
@@ -1209,4 +1211,15 @@ span.items-center {
     .xl\:w-3\/5 {
         width: 60%
     }
+}
+
+.development-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 2.5rem;
+}
+
+.mobile-menu {
+
 }

@@ -10,8 +10,8 @@ function newTab(e) {
 }
 
 // mobile menu
-const btn = document.querySelector("button.mobile-menu-button");
-const menu = document.querySelector(".mobile-menu");
+const btn = document.querySelector("#mobile-menu-button");
+const menu = document.querySelector("#mobile-menu");
 
 // let i = 0;
 // mobile menu event listeners
