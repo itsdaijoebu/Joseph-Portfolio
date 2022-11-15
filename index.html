@@ -148,13 +148,15 @@
 
     <!-- Projects section -->
     <section class="bg-secondary" id="projects">
-      <!-- Project One -->
       <div class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         <!-- Left column -->
         <div class="flex flex-col w-full p-4 xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
           <h2 class="font-semibold text-4xl text-white md:text-2xl lg:text-5xl text-left md:text-left">
             What I've Built
           </h2>
+
+          <!-- Project One -->
+
           <h2
             class="font-semibold text-xl text-accent md:text-xl lg:text-3xl text-left md:text-left mt-12 underline decoration-highlight-500">
             The Quiz
@@ -216,6 +218,79 @@
           <video class="portfolio-video" loop muted playsinline>
             <source src="/assets/video/oasw quiz video.mp4" type="video/mp4" />
           </video>
+          <div class="flex items-center mt-10 justify-center">
+            <div>
+              <!-- scrolls to the second project -->
+              <a href="#project-two">
+                <button
+                  class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-highlight-800">
+                  <span class="text-white text-sm font-semimedium">Next</span>
+                </button>
+              </a>
+              <div class="mx-5 mt-2">
+                <span class="m_scroll_arrows one"></span>
+                <span class="m_scroll_arrows two"></span>
+                <span class="m_scroll_arrows three"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- project two -->
+      <div class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center" id="project-two">
+        <!-- Left column -->
+        <div class="flex flex-col w-full p-4 xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
+          <h2
+            class="font-semibold text-xl text-accent md:text-xl lg:text-3xl text-left md:text-left mt-12 underline decoration-highlight-500">
+            Inner Delve - The Tarot Journal
+          </h2>
+          <!-- <p class="text-accent font-semibold text-xl mt-16">Approach</p> -->
+          <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
+            I think of tarot as an interesting window into the subconscious - as a sort of conversation with yourself to
+            get a clearer idea of what you really think beneath your conscious thoughts and unconscious biases. Since
+            there's nobody who knows you better than you know you, oftentimes you're able to give yourself some really
+            good advice - you just need a way and the will to listen.
+          </p>
+          <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
+            When doing readings for myself, I often only did them in the moment, then promptly forgot what I did
+            immediately after, which kind of defeated the whole purpose. So I looked for a way to create a journal of my
+            readings - a way to remember the readings themselves, yes, but also a way to keep track of the internal
+            shifts in how I viewed both the world around me and the situations I found myself in within it. And who
+            knows, maybe someone else will find use in it for themselves too.
+          </p>
+          <!-- <p class="text-accent font-semibold text-xl mt-16">Tech Stack</p> -->
+          <!-- <p class=" text-accent font-medium mt-8 text-xl md:text-xl lg:text-xl text-left md:text-left">
+                    Node &nbsp JS &nbsp MongoDB</p> -->
+          <!-- <div class="btn-container space-x-10 my-2 md:items-center justify-around"> -->
+          <div class="btn-container my-2 md:items-center justify-center mb-16 mt-16">
+
+            <button
+              class="btn mb-2 bg-button mx-auto px-8 py-4 rounded-xl text-white font-bold flex items-center text-xl hover:border-2 hover:bg-highlight-800">
+              <a href="https://github.com/itsdaijoebu/tarot-journal" target="_blank" rel="noopener noreferrer">
+                Source Code
+              </a>
+            </button>
+
+            <button
+              class="btn mb-2 bg-button mx-auto px-8 py-4 rounded-xl text-white font-bold flex items-center text-xl hover:border-2 hover:bg-highlight-800">
+              <a href="https://tarot-journal.up.railway.app/" target="_blank" rel="noopener noreferrer">
+                Live Site
+              </a>
+            </button>
+          </div>
+          <!-- <a href="https://oasw-aar-training-quiz.netlify.app" target="_blank" rel="noopener noreferrer">
+                        <button
+                            class="px-8 py-4 rounded-xl text-accent border-accent font-bold mt-16 flex items-center space-x-3 border-solid border-2 border-white text-xl sm:w-auto hover:border-2 hover:bg-highlight-800">
+                            Live Demo
+                        </button>
+                    </a> -->
+        </div>
+        <!-- Right column -->
+        <div class="w-full xl:w-2/5 p-12 overflow-hidden md:pt-1">
+          <video class="portfolio-video" loop muted playsinline>
+            <source src="/assets/video/tarot showoff video.mp4" type="video/mp4" />
+          </video>
           <!-- <div class="flex items-center mt-10 justify-center"> -->
           <!-- <div> -->
           <!-- scrolls to the second project -->
@@ -235,6 +310,7 @@
           </div> -->
         </div>
       </div>
+    </section>
     </section>
 
     <!-- Skills section -->
