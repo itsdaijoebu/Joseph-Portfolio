@@ -49,12 +49,12 @@ window.addEventListener("scroll", () => {
   //     console.log(pageYOffset)
   //     console.log(`${current} ${current.length}`);
   // })
-    navItems.forEach((a) => {
-      a.classList.remove("active-nav-item");
-      if (a.classList.contains(current)) {
-        a.classList.add("active-nav-item");
-      }
-    });
+  navItems.forEach((a) => {
+    a.classList.remove("active-nav-item");
+    if (a.classList.contains(current)) {
+      a.classList.add("active-nav-item");
+    }
+  });
 });
 
 // Video behaviour
@@ -84,24 +84,42 @@ function clickPlayPause(e) {
 
 //Google sheets contact form
 // window.addEventListener("load", function() {
-const contactForm = document.getElementById("contact-form");
-const contactSubmit = document.getElementById("submit-contact");
-contactForm.addEventListener("submit", function (e) {
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbzAWQDy5qgkbmFy3FbFH4OwRr0kApdqIkn8cgAOLybSswVxgWtZx8zGmKEhV5JhJ_tr/exec";
+// const contactForm = document.getElementById("contact-form");
+// const contactSubmit = document.getElementById("submit-contact");
+const form = document.forms["submit-to-gSheets"];
+form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const data = new FormData(contactForm);
-  const action = e.target.action;
-  contactSubmit.innerText = "Sending...";
-  contactSubmit.style = "pointer-events: none";
-  fetch(action, {
-    method: "POST",
-    body: data,
-  }).then(() => {
-    contactSubmit.innerText = "Success!";
-    contactForm.reset();
-    setTimeout(() => {
-      contactSubmit.innerText = "Send";
-      contactSubmit.style = "pointer-events: auto";
-    }, 1500);
-  });
+  const submitContact = document.querySelector("#submit-contact");
+  submitContact.disabled = true;
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((res) => console.log("Success!", res))
+    .catch((err) => console.error("Error!", err.message));
+  submitContact.innerText = "Success!";
+  setTimeout(() => {
+    form.reset();
+    submitContact.disabled = false;
+    submitContact.innerText = "Send";
+  }, 500);
 });
+
+// contactForm.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   const data = new FormData(contactForm);
+//   const action = e.target.action;
+//   contactSubmit.innerText = "Sending...";
+//   contactSubmit.style = "pointer-events: none";
+//   fetch(action, {
+//     method: "POST",
+//     body: data,
+//   }).then(() => {
+//     contactSubmit.innerText = "Success!";
+//     contactForm.reset();
+//     setTimeout(() => {
+//       contactSubmit.innerText = "Send";
+//       contactSubmit.style = "pointer-events: auto";
+//     }, 1500);
+//   });
+// });
 //   });
