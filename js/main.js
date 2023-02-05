@@ -96,12 +96,21 @@ form.addEventListener("submit", (e) => {
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((res) => console.log("Success!", res))
     .catch((err) => console.error("Error!", err.message));
-  submitContact.innerText = "Success!";
-  setTimeout(() => {
-    form.reset();
-    submitContact.disabled = false;
-    submitContact.innerText = "Send";
-  }, 500);
+
+  resetForm(5);
+
+  function resetForm(seconds) {
+    if (seconds > 0) {
+      submitContact.innerHTML = `Thank you!<br>Resetting form in ${seconds}`;
+      console.log(seconds)
+      --seconds;
+      setTimeout(() => resetForm(seconds), 1000);
+    } else {
+      form.reset();
+      submitContact.disabled = false;
+      submitContact.innerText = "Send";
+    }
+  }
 });
 
 // contactForm.addEventListener("submit", function (e) {
