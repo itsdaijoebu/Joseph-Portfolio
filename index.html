@@ -148,7 +148,7 @@
 
     <!-- Projects section -->
     <section class="bg-secondary" id="projects">
-      <div class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <article class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         <!-- Left column -->
         <div class="flex flex-col w-full p-4 xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
           <h2 class="font-semibold text-4xl text-white md:text-2xl lg:text-5xl text-left md:text-left">
@@ -235,10 +235,11 @@
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- project two -->
-      <div class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center" id="project-two">
+      <article class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center"
+        id="project-two">
         <!-- Left column -->
         <div class="flex flex-col w-full p-4 xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
           <h2
@@ -282,13 +283,69 @@
           <video class="portfolio-video" loop muted playsinline>
             <source src="/assets/video/tarot showoff video.mp4" type="video/mp4" />
           </video>
-          <!-- <div class="flex items-center mt-10 justify-center"> -->
-          <!-- <div> -->
-          <!-- scrolls to the second project -->
-          <!-- <a href="#project-two">
+          <div class="flex items-center mt-10 justify-center">
+            <div>
+              <!-- scrolls to the second project -->
+              <a href="#project-three">
                 <button
-                  class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-highlight-800"
-                >
+                  class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-highlight-800">
+                  <span class="text-white text-sm font-semimedium">Next</span>
+                </button>
+              </a>
+              <div class="mx-5 mt-2">
+                <span class="m_scroll_arrows one"></span>
+                <span class="m_scroll_arrows two"></span>
+                <span class="m_scroll_arrows three"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3  -->
+      <article class="container pt-24 md:pt-26 mx-auto flex flex-wrap flex-col md:flex-row items-center"
+        id="project-three">
+        <!-- Left column -->
+        <div class="flex flex-col w-full p-4 xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
+          <h2
+            class="font-semibold text-xl text-accent md:text-xl lg:text-3xl text-left md:text-left mt-12 underline decoration-highlight-500">
+            FHL Blog
+          </h2>
+          <!-- <p class="text-accent font-semibold text-xl mt-16">Approach</p> -->
+          <p class="font-semimedium text-white mt-8 text-2xl md:text-2xl lg:text-2xl text-left md:text-left">
+            A basic blog site built for a small non-profit.
+          </p>
+          <!-- <p class="text-accent font-semibold text-xl mt-16">Tech Stack</p> -->
+          <!-- <p class=" text-accent font-medium mt-8 text-xl md:text-xl lg:text-xl text-left md:text-left">
+                    Node &nbsp JS &nbsp MongoDB</p> -->
+          <!-- <div class="btn-container space-x-10 my-2 md:items-center justify-around"> -->
+          <div class="btn-container my-2 md:items-center justify-center mb-16 mt-16">
+            <button
+              class="btn mb-2 bg-button mx-auto px-8 py-4 rounded-xl text-white font-bold flex items-center text-xl hover:border-2 hover:bg-highlight-800">
+              <a href="https://github.com/itsdaijoebu/fhl-blog" target="_blank" rel="noopener noreferrer">
+                Source Code
+              </a>
+            </button>
+
+            <button
+              class="btn mb-2 bg-button mx-auto px-8 py-4 rounded-xl text-white font-bold flex items-center text-xl hover:border-2 hover:bg-highlight-800">
+              <a href="https://faithhopelove.up.railway.app/" target="_blank" rel="noopener noreferrer">
+                Live Site
+              </a>
+            </button>
+          </div>
+        </div>
+        <!-- Right column -->
+        <div class="w-full xl:w-2/5 p-12 overflow-hidden md:pt-1">
+          <video class="portfolio-video" loop muted playsinline>
+            <source src="/assets/video/fhl blog showoff video.mp4" type="video/mp4" />
+          </video>
+          <!-- <div class="flex items-center mt-10 justify-center"> -->
+            <!-- <div> -->
+              <!-- scrolls to the second project -->
+              <!-- <a href="#project-four">
+                <button
+                  class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-highlight-800">
                   <span class="text-white text-sm font-semimedium">Next</span>
                 </button>
               </a>
@@ -300,9 +357,9 @@
             </div>
           </div> -->
         </div>
-      </div>
+      </article>
+
     </section>
-    <!-- </section> -->
 
     <!-- Skills section -->
     <section class="bg-primary mb-20" id="skills">
@@ -371,8 +428,7 @@
             Contact
           </h2>
 
-          <form id="contact-form" name="submit-to-gSheets" method="POST"
-            class="w-full">
+          <form id="contact-form" name="submit-to-gSheets" method="POST" class="w-full">
             <div class="mb-6 mt-20">
               <label for="name" class="block mb-2 font-bold text-lg text-white">Name</label>
               <input name="Name" type="text" id="name"
