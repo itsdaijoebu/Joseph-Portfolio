@@ -30,25 +30,15 @@ window.addEventListener("scroll", () => {
   for (let i = sections.length - 1; i >= 0; i--) {
     const sectionTop = sections[i].offsetTop;
     const sectionHeight = sections[i].clientHeight;
-    if (scrollY <= sections[1].offsetTop - sections[1].clientHeight / 3) {
+    if (scrollY <= sections[1].clientHeight / 3 - sections[1].offsetTop) {
       current = "top";
       break;
     } else if (scrollY >= sectionTop - sectionHeight / 3) {
       current = sections[i].getAttribute("id");
-      console.log("lower section", current);
       break;
     }
   }
-
-  // sections.forEach(section => {
-  //     const sectionTop = section.offsetTop;
-  //     const sectionHeight = section.clientHeight;
-  //     if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-  //         current = section.getAttribute("id");
-  //     }
-  //     console.log(pageYOffset)
-  //     console.log(`${current} ${current.length}`);
-  // })
+  
   navItems.forEach((a) => {
     a.classList.remove("active-nav-item");
     if (a.classList.contains(current)) {
