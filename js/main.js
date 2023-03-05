@@ -5,7 +5,6 @@ const externalLinks = Array.from(document.querySelectorAll(`.ext-links`));
 externalLinks.forEach((link) => link.addEventListener("click", newTab));
 function newTab(e) {
   e.preventDefault();
-  console.log(e.currentTarget);
   window.open(`${e.currentTarget.href}`);
 }
 
@@ -16,7 +15,7 @@ const menu = document.querySelector("#mobile-menu");
 // let i = 0;
 // mobile menu event listeners
 btn.addEventListener("click", () => {
-  menu.classList.toggle('display-mobile-menu')
+  menu.classList.toggle("display-mobile-menu");
 });
 
 const copyYear = document.querySelector("#year");
@@ -31,8 +30,7 @@ window.addEventListener("scroll", () => {
     const sectionTop = sections[i].offsetTop;
     const sectionHeight = sections[i].clientHeight;
     // if (scrollY <= sections[1].clientHeight / 3 - sections[1].offsetTop) {
-    if (scrollY <= sections[0].offsetHeight/2) {
-      console.log(sections[0].clientHeight, scrollY)
+    if (scrollY <= sections[0].offsetHeight / 2) {
       current = "top";
       break;
     } else if (scrollY >= sectionTop - sectionHeight / 3) {
@@ -94,7 +92,6 @@ form.addEventListener("submit", (e) => {
   function resetForm(seconds) {
     if (seconds > 0) {
       submitContact.innerHTML = `Thank you!<br>Resetting form in ${seconds}`;
-      console.log(seconds);
       --seconds;
       setTimeout(() => resetForm(seconds), 1000);
     } else {
@@ -127,24 +124,33 @@ form.addEventListener("submit", (e) => {
 const scream = new screamToScroll();
 document.getElementById("scream-checkbox").addEventListener("change", (e) => {
   if (e.target.checked) {
-    console.log("create");
     scream.createScream();
   } else {
-    console.log("stop");
     scream.stopScream();
   }
 });
 // Scream to Scroll
 function screamToScroll() {
   let audioContext;
-  let isScreaming = false;
   let screamInterval;
+  let highscore = Number(localStorage.getItem("screamScore")) || 0;
+  let totalScore = Number(localStorage.getItem("screamTotal")) || 0;
+  let sessionScore = 0;
+  let score = 0;
   const volumeMeterEl = document.getElementById("scream-meter");
+  const screamSwitch = document.getElementById("scream-switch");
+  const screamSessionTotal = document.getElementById("scream-session-total");
+  const screamTotal = document.getElementById("scream-total");
+
+  function setPersonalBest(score) {
+    document.getElementById("scream-personal-best").textContent = score;
+  }
+  screamTotal.textContent = totalScore;
+  setPersonalBest(highscore);
 
   return {
     createScream: async () => {
       audioContext = new AudioContext();
-      isScreaming = true;
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: true,
         video: false,
@@ -157,7 +163,6 @@ function screamToScroll() {
 
       const pcmData = new Float32Array(analyserNode.fftSize);
       const scream = () => {
-        if (!isScreaming) return;
         analyserNode.getFloatTimeDomainData(pcmData);
         let sumSquares = 0.0;
         for (const amp of pcmData) {
@@ -165,9 +170,65 @@ function screamToScroll() {
         }
         const volume = Math.sqrt(sumSquares / pcmData.length);
         volumeMeterEl.value = volume;
+        if (volume < 0.01) {
+          localStorage.setItem("screamTotal", totalScore);
+          if (score > 0) {
+            if (score > highscore) {
+              highscore = score;
+              localStorage.setItem("screamScore", highscore);
+            }
+            setPersonalBest(highscore);
+
+            score = 0;
+            screamSwitch.dataset.scoreAfter = "";
+            screamSwitch.dataset.scoreBefore = "0";
+          }
+          screamSwitch.classList.remove("scream-thousands-ones");
+          screamSwitch.classList.remove("scream-thousands");
+          screamSwitch.classList.remove("scream-tenthousands");
+          screamSwitch.classList.remove("scream-tenthousands-ones");
+        }
         if (volume > 0.01) {
-          console.log(volume)
-          window.scrollBy(0, volume * 100);
+          const scrollDist = Math.floor(volume * 100);
+          window.scrollBy(0, scrollDist);
+          score += scrollDist;
+          sessionScore += scrollDist;
+          totalScore += scrollDist;
+          screamTotal.textContent = totalScore;
+          screamSessionTotal.textContent = sessionScore;
+          screamSwitch.dataset.scoreBefore = String(score).slice(-2);
+          if (score > 99) {
+            screamSwitch.dataset.scoreAfter = String(score).slice(0, -2);
+          }
+          if (score > 999 && score < 10000) {
+            if (score < 1100 || score > 1199) {
+              screamSwitch.classList.add("scream-thousands");
+              screamSwitch.classList.remove("scream-thousands-ones");
+            } else {
+              screamSwitch.classList.remove("scream-thousands");
+              screamSwitch.classList.add("scream-thousands-ones");
+            }
+          } else if (score > 9999) {
+            if (score < 11100 || score > 11199) {
+              screamSwitch.classList.remove("scream-thousands");
+              screamSwitch.classList.remove("scream-tenthousands-ones");
+              screamSwitch.classList.add("scream-tenthousands");
+            } else {
+              screamSwitch.classList.remove("scream-tenthousands");
+              screamSwitch.classList.remove("scream-thousands");
+              screamSwitch.classList.add("scream-tenthousands-ones");
+            }
+          }
+          if (
+            scrollY + 10 >=
+            document.documentElement.scrollHeight -
+              document.documentElement.clientHeight
+          ) {
+            window.scrollTo({
+              top: 0,
+              behavior: "instant",
+            });
+          }
         }
       };
 
@@ -175,7 +236,6 @@ function screamToScroll() {
     },
     stopScream: () => {
       audioContext.close();
-      isScreaming = false;
       clearInterval(screamInterval);
     },
   };

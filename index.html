@@ -50,10 +50,16 @@
       <!-- <button class="toggle-scream" id="toggle-scream">Scream to Scroll</button> -->
       <label class="scream-toggle text-white">
         <input type="checkbox" class="scream-checkbox" id="scream-checkbox">
-        <div class="scream-switch"></div>
+        <div class="scream-switch" id="scream-switch" data-score-before="0" data-score-after=""></div>
         <div class="scream-label-container">
           <span class="scream-label">Scream</span>
-          <meter class="scream-meter" id="scream-meter" low="0.35" optimum="0.6" high="0.75"  max="1" value="0"></meter>
+          <meter class="scream-meter" id="scream-meter" low="0.35" optimum="0.6" high="0.75" max="1" value="0"></meter>
+        </div>
+        <div class="scream-stats">
+          <div class="scream-stats-point"></div>
+          <div>Personal Best: <span id="scream-personal-best" class="scream-personal-best">0s</span></div>
+          <div>Session Pixels Screamed: <span id="scream-session-total" class="scream-session-total">0</span></div>
+          <div>Total Pixels Screamed: <span id="scream-total" class="scream-total">0</span></div>
         </div>
       </label>
 
