@@ -16,7 +16,7 @@ const menu = document.querySelector("#mobile-menu");
 // let i = 0;
 // mobile menu event listeners
 btn.addEventListener("click", () => {
-  menu.classList.toggle("hidden");
+  menu.classList.toggle('display-mobile-menu')
 });
 
 const copyYear = document.querySelector("#year");
@@ -30,7 +30,9 @@ window.addEventListener("scroll", () => {
   for (let i = sections.length - 1; i >= 0; i--) {
     const sectionTop = sections[i].offsetTop;
     const sectionHeight = sections[i].clientHeight;
-    if (scrollY <= sections[1].clientHeight / 3 - sections[1].offsetTop) {
+    // if (scrollY <= sections[1].clientHeight / 3 - sections[1].offsetTop) {
+    if (scrollY <= sections[0].offsetHeight/2) {
+      console.log(sections[0].clientHeight, scrollY)
       current = "top";
       break;
     } else if (scrollY >= sectionTop - sectionHeight / 3) {
@@ -38,7 +40,7 @@ window.addEventListener("scroll", () => {
       break;
     }
   }
-  
+
   navItems.forEach((a) => {
     a.classList.remove("active-nav-item");
     if (a.classList.contains(current)) {
@@ -92,7 +94,7 @@ form.addEventListener("submit", (e) => {
   function resetForm(seconds) {
     if (seconds > 0) {
       submitContact.innerHTML = `Thank you!<br>Resetting form in ${seconds}`;
-      console.log(seconds)
+      console.log(seconds);
       --seconds;
       setTimeout(() => resetForm(seconds), 1000);
     } else {
@@ -122,3 +124,59 @@ form.addEventListener("submit", (e) => {
 //   });
 // });
 //   });
+const scream = new screamToScroll();
+document.getElementById("scream-checkbox").addEventListener("change", (e) => {
+  if (e.target.checked) {
+    console.log("create");
+    scream.createScream();
+  } else {
+    console.log("stop");
+    scream.stopScream();
+  }
+});
+// Scream to Scroll
+function screamToScroll() {
+  let audioContext;
+  let isScreaming = false;
+  let screamInterval;
+  const volumeMeterEl = document.getElementById("scream-meter");
+
+  return {
+    createScream: async () => {
+      audioContext = new AudioContext();
+      isScreaming = true;
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: false,
+      });
+      // audioContext = new AudioContext();
+      const mediaStreamAudioSourceNode =
+        audioContext.createMediaStreamSource(stream);
+      const analyserNode = audioContext.createAnalyser();
+      mediaStreamAudioSourceNode.connect(analyserNode);
+
+      const pcmData = new Float32Array(analyserNode.fftSize);
+      const scream = () => {
+        if (!isScreaming) return;
+        analyserNode.getFloatTimeDomainData(pcmData);
+        let sumSquares = 0.0;
+        for (const amp of pcmData) {
+          sumSquares += amp * amp;
+        }
+        const volume = Math.sqrt(sumSquares / pcmData.length);
+        volumeMeterEl.value = volume;
+        if (volume > 0.01) {
+          console.log(volume)
+          window.scrollBy(0, volume * 100);
+        }
+      };
+
+      screamInterval = setInterval(scream, 100);
+    },
+    stopScream: () => {
+      audioContext.close();
+      isScreaming = false;
+      clearInterval(screamInterval);
+    },
+  };
+}
