@@ -508,6 +508,12 @@ nav.social-nav {
 /* meter::-webkit-meter-bar {
   background: red;
 } */
+
+.scream-title {
+  font-weight: bold;
+  color: rgb(var(--accent-color));
+  margin-bottom: 1rem;
+}
 .scream-meter {
   position: absolute;
   left: 1rem;
@@ -516,10 +522,9 @@ nav.social-nav {
   height: 2.8rem;
   width: 3.8rem;
 }
-
 .scream-stats {
   margin-top: 1rem;
-  padding: 2rem;
+  padding: 1.5rem 2rem 2rem 2rem;
   border: 2px solid rgb(var(--accent-color));
   border-radius: 10px;
   background-color: var(--primary-color);
