@@ -83,6 +83,7 @@ body {
   /* padding: 0 10vw; */
   margin: 0;
   line-height: inherit;
+  overflow-x: hidden;
 }
 
 hr {
@@ -1368,12 +1369,12 @@ span.items-center {
   position: absolute;
   top: 0;
   right: 0rem;
-  /* background-color: rgba(var(--nav-color),1); */
-  height: 0;
-  width: 0;
+  background: linear-gradient(to left, rgba(var(--nav-color),1) 80%, rgba(var(--nav-color), 0));
+  width: 0vw;
+  height: 100vh;
   /* padding: 0 3rem; */
-  padding-left: 4rem;
   overflow: hidden;
+  transition: width 0.5s;
 }
 .mobile-menu-button {
   position: absolute;
@@ -1382,8 +1383,7 @@ span.items-center {
   right: 3rem;
 }
 .display-mobile-menu {
-  background: linear-gradient(to left, rgba(var(--nav-color),1) 80%, rgba(var(--nav-color), 0));
   /* background-color: rgb(var(--nav-color)); */
-  height: 100vh;
   width: 65vw;
+  padding-left: 4rem;
 }
