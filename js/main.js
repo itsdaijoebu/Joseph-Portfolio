@@ -40,9 +40,9 @@ window.addEventListener("scroll", () => {
   }
 
   if(current === 'top') {
-    document.querySelector('#top-button').classList.add('hidden')
+    document.querySelector('#top-button').classList.add('invisible')
   } else {
-    document.querySelector('#top-button').classList.remove('hidden')
+    document.querySelector('#top-button').classList.remove('invisible')
   }
 
   navItems.forEach((a) => {

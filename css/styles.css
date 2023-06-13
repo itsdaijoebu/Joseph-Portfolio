@@ -555,6 +555,8 @@ nav.social-nav {
   position: fixed;
   bottom: 3vh;
   right: 3vh;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 @media (min-width: 640px) {
@@ -657,6 +659,15 @@ html {
 .m_scroll_arrows {
   display: block;
   transform: rotate(45deg);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  width: 14px;
+  height: 14px;
+}
+
+.m_scroll_arrows_up {
+  display: block;
+  transform: rotate(225deg);
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
   width: 14px;
@@ -856,6 +867,10 @@ html {
 
 .hidden {
   display: none;
+}
+
+.invisible {
+  opacity: 0;
 }
 
 .h-full {
