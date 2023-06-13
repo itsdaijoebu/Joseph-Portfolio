@@ -194,8 +194,8 @@ function screamToScroll() {
           screamSwitch.classList.remove("scream-tenthousands");
           screamSwitch.classList.remove("scream-tenthousands-ones");
         }
-        if (volume > 0.01) {
-          const scrollDist = Math.floor(volume * 100);
+        if (volume) {
+          const scrollDist = Math.floor(Math.pow((volume * 50), 2));
           window.scrollBy(0, scrollDist);
           score += scrollDist;
           sessionScore += scrollDist;
