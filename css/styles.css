@@ -1424,7 +1424,7 @@ span.items-center {
 .development-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2.5rem;
   margin-top: 2.5rem;
   /* flex: 1 1 0px; */
 }
