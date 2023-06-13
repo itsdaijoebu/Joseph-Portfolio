@@ -39,6 +39,12 @@ window.addEventListener("scroll", () => {
     }
   }
 
+  if(current === 'top') {
+    document.querySelector('#top-button').classList.add('hidden')
+  } else {
+    document.querySelector('#top-button').classList.remove('hidden')
+  }
+
   navItems.forEach((a) => {
     a.classList.remove("active-nav-item");
     if (a.classList.contains(current)) {

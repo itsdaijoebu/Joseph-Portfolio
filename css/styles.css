@@ -551,6 +551,12 @@ nav.social-nav {
   filter: drop-shadow(0 0 1px);
 }
 
+.top-button {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vh;
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -730,6 +736,10 @@ html {
 
 .relative {
   position: relative;
+}
+
+.fixed {
+  position: fixed;
 }
 
 .sticky {
