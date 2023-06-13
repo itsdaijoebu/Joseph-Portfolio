@@ -1096,6 +1096,16 @@ span.items-center {
   padding-bottom: 0.5rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
