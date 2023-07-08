@@ -499,7 +499,6 @@ nav.social-nav {
   padding: 0 1rem;
   position: relative;
   background-color: rgb(var(--nav-color));
-  mix-blend-mode: multiply;
 }
 .scream-label-container {
   display: inline-block;
