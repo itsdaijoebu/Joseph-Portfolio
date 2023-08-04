@@ -53,21 +53,21 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Video behaviour
+// // Video behaviour
 let isPaused = false;
 let portfolioVideos = Array.from(document.querySelectorAll(".portfolio-video"));
+let firstPlay = true;
 portfolioVideos.forEach((video) => {
   video.addEventListener("mouseover", playOnHover);
-  video.addEventListener("click", clickPlayPause);
+  // video.addEventListener("click", clickPlayPause);
   // video.addEventListener("mouseleave", pauseOffHover);
 });
 function playOnHover(e) {
+  if(!firstPlay) return
   e.target.play();
   isPaused = false;
   e.target.classList.remove("paused");
-}
-function pauseOffHover(e) {
-  e.target.pause();
+  firstPlay = false;
 }
 function clickPlayPause(e) {
   if (isPaused) e.target.play();
