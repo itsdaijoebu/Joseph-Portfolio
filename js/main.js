@@ -39,7 +39,7 @@ window.addEventListener("scroll", () => {
     }
   }
 
-  if(current === 'top') {
+  if (current === 'top') {
     document.querySelector('#top-button').classList.add('invisible')
   } else {
     document.querySelector('#top-button').classList.remove('invisible')
@@ -56,27 +56,30 @@ window.addEventListener("scroll", () => {
 // // Video behaviour
 let isPaused = false;
 let portfolioVideos = Array.from(document.querySelectorAll(".portfolio-video"));
-let firstPlay = true;
 portfolioVideos.forEach((video) => {
+  let firstPlay = true;
+
   video.addEventListener("mouseover", playOnHover);
   // video.addEventListener("click", clickPlayPause);
   // video.addEventListener("mouseleave", pauseOffHover);
-});
-function playOnHover(e) {
-  if(!firstPlay) return
-  e.target.play();
-  isPaused = false;
-  e.target.classList.remove("paused");
-  firstPlay = false;
-}
-function clickPlayPause(e) {
-  if (isPaused) e.target.play();
-  else e.target.pause();
-  isPaused = !isPaused;
 
-  if (isPaused) e.target.classList.add("paused");
-  else e.target.classList.remove("paused");
-}
+  function playOnHover(e) {
+    if (!firstPlay) return
+    e.target.play();
+    isPaused = false;
+    e.target.classList.remove("paused");
+    firstPlay = false;
+  }
+  function clickPlayPause(e) {
+    if (isPaused) e.target.play();
+    else e.target.pause();
+    isPaused = !isPaused;
+
+    if (isPaused) e.target.classList.add("paused");
+    else e.target.classList.remove("paused");
+  }
+});
+
 
 //Google sheets contact form
 // window.addEventListener("load", function() {
@@ -228,7 +231,7 @@ function screamToScroll() {
           if (
             scrollY + 10 >=
             document.documentElement.scrollHeight -
-              document.documentElement.clientHeight
+            document.documentElement.clientHeight
           ) {
             window.scrollTo({
               top: 0,
