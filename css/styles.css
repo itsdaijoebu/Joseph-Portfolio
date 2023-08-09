@@ -873,7 +873,7 @@ html {
 }
 
 .h-full {
-  height: calc(100vh - 6rem);
+  height: calc(100dvh - 6rem);
 }
 
 .h-10 {
@@ -1473,7 +1473,7 @@ span.items-center {
     rgba(var(--nav-color), 0)
   );
   width: 0vw;
-  height: 100vh;
+  height: 100dvh;
   /* padding: 0 3rem; */
   overflow: hidden;
   transition: width 0.5s;
