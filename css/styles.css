@@ -2,8 +2,7 @@
 @font-face {
   font-family: "aileron";
   src: url("fonts/Aileron-Regular-webfont.eot");
-  src: url("fonts/Aileron-Regular-webfont.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("fonts/Aileron-Regular-webfont.eot?#iefix") format("embedded-opentype"),
     url("fonts/Aileron-Regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -112,10 +111,12 @@ h6 {
   font-size: 8rem;
   line-height: 8rem;
 }
+
 .h1-secondary {
   font-size: 5rem;
   line-height: 5rem;
 }
+
 .h1-logo {
   font-size: 4vh;
   /* line-height: 12vh; */
@@ -394,7 +395,7 @@ video {
 
 .container {
   width: 100%;
-  padding: 0 5rem;
+  padding: 0 1rem;
   /* border: 2px solid gold; */
 }
 
@@ -403,11 +404,9 @@ nav.social-nav {
 }
 
 .nav-container {
-  background: linear-gradient(
-    rgba(var(--nav-color), 1),
-    85%,
-    rgba(var(--nav-color), 0)
-  );
+  background: linear-gradient(rgba(var(--nav-color), 1),
+      85%,
+      rgba(var(--nav-color), 0));
   height: 5rem;
   width: 100vw;
 }
@@ -423,6 +422,7 @@ nav.social-nav {
   cursor: pointer;
   display: inline-block;
 }
+
 .scream-switch {
   display: inline-block;
   background: rgb(var(--white));
@@ -433,36 +433,40 @@ nav.social-nav {
   vertical-align: middle;
   transition: background 0.25s;
 }
+
 .scream-switch::before,
 .scream-switch::after {
   font-size: 0.8em;
 }
+
 .scream-switch::after {
   margin-left: 1.2rem;
   content: attr(data-score-after);
   color: var(--primary-color);
   line-height: 1.75;
 }
+
 .scream-thousands.scream-switch::after {
   margin-left: 0.7rem;
 }
+
 .scream-thousands-ones.scream-switch::after {
   margin-left: 0.9rem;
 }
+
 .scream-tenthousands.scream-switch::after {
   margin-left: 0.2rem;
 }
+
 .scream-tenthousands-ones.scream-switch::after {
   margin-left: 0.5rem;
 }
 
 .scream-switch::before {
   display: block;
-  background: linear-gradient(
-    to bottom,
-    var(--primary-color) 0%,
-    var(--primary-color) 100%
-  );
+  background: linear-gradient(to bottom,
+      var(--primary-color) 0%,
+      var(--primary-color) 100%);
   /* background: rgb(var(--white)); */
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
@@ -477,34 +481,39 @@ nav.social-nav {
   color: rgb(var(--accent-color));
   text-align: center;
 }
+
 .scream-toggle:hover .scream-switch::before {
   /* background: linear-gradient(to bottom, rgb(var(--white)) 0%, #eee 100%); */
-  background: linear-gradient(
-    to bottom,
-    var(--secondary-color) 0%,
-    var(--primary-color) 100%
-  );
+  background: linear-gradient(to bottom,
+      var(--secondary-color) 0%,
+      var(--primary-color) 100%);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
-.scream-checkbox:checked + .scream-switch {
+
+.scream-checkbox:checked+.scream-switch {
   background: rgb(var(--accent-color));
 }
-.scream-checkbox:checked + .scream-switch::before {
+
+.scream-checkbox:checked+.scream-switch::before {
   left: 30px;
 }
+
 .scream-checkbox {
   position: absolute;
   visibility: hidden;
 }
+
 .scream-label {
   padding: 0 1rem;
   position: relative;
   background-color: rgb(var(--nav-color));
 }
+
 .scream-label-container {
   display: inline-block;
   position: relative;
 }
+
 /* meter::-webkit-meter-bar {
   background: red;
 } */
@@ -514,6 +523,7 @@ nav.social-nav {
   color: rgb(var(--accent-color));
   margin-bottom: 1rem;
 }
+
 .scream-meter {
   position: absolute;
   left: 1rem;
@@ -522,6 +532,7 @@ nav.social-nav {
   height: 2.8rem;
   width: 3.8rem;
 }
+
 .scream-stats {
   margin-top: 1rem;
   padding: 1.5rem 2rem 2rem 2rem;
@@ -532,22 +543,24 @@ nav.social-nav {
   position: relative;
   display: none;
 }
+
 .scream-toggle:hover>.scream-stats {
   display: block;
 }
+
 .scream-stats::before {
   content: '';
-	position: absolute;
+  position: absolute;
   z-index: 100;
-	top: 0;
-	left: 8%;
-	width: 0;
-	height: 0;
-	border: 12px solid transparent;
-	border-bottom-color: rgb(var(--accent-color));
-	border-top: 0;
-	margin-left: -12px;
-	margin-top: -12px;
+  top: 0;
+  left: 8%;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-bottom-color: rgb(var(--accent-color));
+  border-top: 0;
+  margin-left: -12px;
+  margin-top: -12px;
   filter: drop-shadow(0 0 1px);
 }
 
@@ -571,7 +584,7 @@ nav.social-nav {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 880px) {
   nav.social-nav {
     display: flex;
     position: fixed;
@@ -585,6 +598,7 @@ nav.social-nav {
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
+    padding: 0 5rem;
   }
 }
 
@@ -609,12 +623,15 @@ nav.social-nav {
   background-color: rgb(var(--accent-color));
   border: 2px solid rgb(var(--accent-color));
 }
+
 .bg-primary .bg-button {
   color: var(--primary-color);
 }
+
 .bg-secondary .bg-button {
   color: var(--secondary-color);
 }
+
 .bg-button:hover {
   color: rgb(var(--accent-color));
 }
@@ -628,8 +645,8 @@ nav.social-nav {
   position: relative;
 }
 
-.bg-primary + .bg-secondary::before,
-.bg-secondary + .bg-primary::before {
+.bg-primary+.bg-secondary::before,
+.bg-secondary+.bg-primary::before {
   content: "";
   position: absolute;
   top: 0;
@@ -639,17 +656,13 @@ nav.social-nav {
 }
 
 .bg-secondary::before {
-  background-image: linear-gradient(
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background-image: linear-gradient(var(--primary-color),
+      var(--secondary-color));
 }
 
 .bg-primary::before {
-  background-image: linear-gradient(
-    var(--secondary-color),
-    var(--primary-color)
-  );
+  background-image: linear-gradient(var(--secondary-color),
+      var(--primary-color));
 }
 
 html {
@@ -857,6 +870,7 @@ html {
 .flex {
   display: flex;
 }
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -966,31 +980,31 @@ span.items-center {
   column-gap: 4rem;
 }
 
-.space-x-12 > :not([hidden]) ~ :not([hidden]) {
+.space-x-12> :not([hidden])~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(3rem * var(--tw-space-x-reverse));
   margin-left: calc(3rem * (1 - var(--tw-space-x-reverse)));
 }
 
-.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+.space-x-6> :not([hidden])~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * (1 - var(--tw-space-x-reverse)));
 }
 
-.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+.space-x-10> :not([hidden])~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(2.5rem * var(--tw-space-x-reverse));
   margin-left: calc(2.5rem * (1 - var(--tw-space-x-reverse)));
 }
 
-.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+.space-x-3> :not([hidden])~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
   margin-left: calc(0.75rem * (1 - var(--tw-space-x-reverse)));
 }
 
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+.space-x-8> :not([hidden])~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
   margin-left: calc(2rem * (1 - var(--tw-space-x-reverse)));
@@ -1288,10 +1302,8 @@ span.items-center {
 }
 
 .focus\:ring:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
-    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
-    calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
     var(--tw-shadow, 0 0 #0000);
 }
@@ -1316,6 +1328,7 @@ span.items-center {
   width: 75%;
   justify-content: center;
 }
+
 .btn.hero {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1351,6 +1364,7 @@ span.items-center {
   .btn-container {
     flex-direction: row;
   }
+
   .btn-container.hero {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -1360,6 +1374,7 @@ span.items-center {
   .btn {
     width: auto;
   }
+
   .btn.hero {
     padding: 1rem 2rem;
   }
@@ -1468,23 +1483,23 @@ span.items-center {
   position: absolute;
   top: 0;
   right: 0rem;
-  background: linear-gradient(
-    to left,
-    rgba(var(--nav-color), 1) 80%,
-    rgba(var(--nav-color), 0)
-  );
+  background: linear-gradient(to left,
+      rgba(var(--nav-color), 1) 80%,
+      rgba(var(--nav-color), 0));
   width: 0vw;
   height: 100dvh;
   /* padding: 0 3rem; */
   overflow: hidden;
   transition: width 0.5s;
 }
+
 .mobile-menu-button {
   position: absolute;
   z-index: 1;
   top: 1rem;
   right: 3rem;
 }
+
 .display-mobile-menu {
   /* background-color: rgb(var(--nav-color)); */
   width: 65vw;
