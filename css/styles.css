@@ -430,7 +430,7 @@ nav.social-nav {
   width: 58px;
   height: 32px;
   position: relative;
-  vertical-align: middle;
+  vertical-align: top;
   transition: background 0.25s;
 }
 
@@ -467,7 +467,6 @@ nav.social-nav {
   background: linear-gradient(to bottom,
       var(--primary-color) 0%,
       var(--primary-color) 100%);
-  /* background: rgb(var(--white)); */
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
   width: 24px;
@@ -507,6 +506,11 @@ nav.social-nav {
   padding: 0 1rem;
   position: relative;
   background-color: rgb(var(--nav-color));
+  /* background-clip: text;
+  color: transparent;
+  mask-image: url('#scream-meter');
+  -webkit-mask-image: url('#scream-meter'); */
+
 }
 
 .scream-label-container {
@@ -514,14 +518,17 @@ nav.social-nav {
   position: relative;
 }
 
-/* meter::-webkit-meter-bar {
-  background: red;
-} */
+svg rect {
+  fill: white;
+  mask: url(#scream-label-mask)
+}
 
-.scream-title {
-  font-weight: bold;
-  color: rgb(var(--accent-color));
-  margin-bottom: 1rem;
+svg > rect {
+  fill: rgb(var(--nav-color));
+}
+
+#scream-label-svg {
+  padding: 0 1rem;
 }
 
 .scream-meter {
@@ -530,7 +537,13 @@ nav.social-nav {
   top: -0.5rem;
   z-index: -1;
   height: 2.8rem;
-  width: 3.8rem;
+  width: 3.9rem;
+}
+
+.scream-title {
+  font-weight: bold;
+  color: rgb(var(--accent-color));
+  margin-bottom: 1rem;
 }
 
 .scream-stats {

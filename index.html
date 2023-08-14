@@ -49,9 +49,20 @@
         <input type="checkbox" class="scream-checkbox" id="scream-checkbox">
         <div class="scream-switch" id="scream-switch" data-score-before="0" data-score-after=""></div>
         <div class="scream-label-container">
-          <span class="scream-label">Scream</span>
+
+          <svg height="2rem" width="10rem" id="scream-label-svg">
+            <defs>
+              <mask id="scream-label-mask" x="0" y="0">
+                <rect x="0" y="0" height="100%" width="100%" id="scream-label-rect"/>
+                <text x="2rem" y="1.2rem" text-anchor="middle" id="scream-label-text">Scream</text>
+              </mask>
+            </defs>
+            <rect x="0" y="0" height="100%" width="100%" />
+          </svg>
+          <!-- <span class="scream-label" id="scream-label">Scream</span> -->
           <meter class="scream-meter" id="scream-meter" low="0.35" optimum="0.6" high="0.75" max="1" value="0"></meter>
         </div>
+
         <div class="scream-stats">
           <h2 class="scream-title">Scream to Scroll</h2>
           <div>Personal Best: <span id="scream-personal-best" class="scream-personal-best">0s</span></div>
