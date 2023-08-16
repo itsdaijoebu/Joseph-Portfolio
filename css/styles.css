@@ -522,7 +522,8 @@ nav.social-nav {
 
 svg rect {
   fill: white;
-  mask: url(#scream-label-mask)
+  -webkit-mask: url(#scream-label-mask);
+  mask: url(#scream-label-mask);
 }
 
 svg > rect {
