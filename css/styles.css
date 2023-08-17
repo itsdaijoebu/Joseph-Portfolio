@@ -409,6 +409,7 @@ nav.social-nav {
   background: linear-gradient(rgba(var(--nav-color), 1),
       85%,
       rgba(var(--nav-color), 0));
+  background: rgb(var(--nav-color));
   height: 5rem;
   width: 100vw;
 }
@@ -526,7 +527,7 @@ svg rect {
   mask: url(#scream-label-mask);
 }
 
-svg > rect {
+svg>rect {
   fill: rgb(var(--nav-color));
 }
 
@@ -622,6 +623,7 @@ svg > rect {
   .container {
     max-width: 1280px;
   }
+
   .portfolio-video-container {
     padding-left: 2rem;
   }
