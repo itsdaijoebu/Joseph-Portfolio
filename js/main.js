@@ -155,6 +155,7 @@ const screamCheckbox = document.getElementById('scream-checkbox')
 if(screamCheckbox.checked) {
   scream.createScream();
 }
+
 screamCheckbox.addEventListener("change", (e) => {
   if (e.target.checked) {
     scream.createScream();
