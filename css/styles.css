@@ -508,7 +508,8 @@ nav.social-nav {
 .scream-label {
   padding: 0 1rem;
   position: relative;
-  background-color: rgb(var(--nav-color));
+  color: var(--primary-color);
+  /* background-color: rgb(var(--nav-color)); */
   /* background-clip: text;
   color: transparent;
   mask-image: url('#scream-meter');
@@ -519,6 +520,11 @@ nav.social-nav {
 .scream-label-container {
   display: inline-block;
   position: relative;
+}
+
+/* Scream SVG Things  */
+#scream-label-svg-text {
+  fill: black;
 }
 
 svg rect {

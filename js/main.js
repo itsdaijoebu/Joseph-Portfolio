@@ -1,5 +1,22 @@
 const today = new Date();
 
+// check if user is chromium or not, so it knows which version of scream display to use 
+window.addEventListener("load", () => {
+  var prefix = (Array.prototype.slice
+  .call(window.getComputedStyle(document.documentElement, ""))
+  .join("") 
+  .match(/-(moz|webkit|ms)-/))[1];
+
+  // MOZ - FIREFOX (GECKO ENGINE)
+  // WEBKIT - CHROME, SAFARI, OPERA, EDGE (WEBKIT ENGINE)
+  // MS - OLD INTERNET EXPLORER & EDGE (TRIDENT ENGINE)
+  // NOTE - OLD OPERA VERSIONS USE PRESTO ENGINE. PREFIX IS -O
+  if(prefix !== 'webkit') {
+    document.getElementById('scream-label').classList.remove('hidden');
+    document.getElementById('scream-label-svg').classList.add('hidden');
+  }
+});
+
 // external link behavious
 const externalLinks = Array.from(document.querySelectorAll(`.ext-links`));
 externalLinks.forEach((link) => link.addEventListener("click", newTab));
@@ -130,8 +147,15 @@ form.addEventListener("submit", (e) => {
 //   });
 // });
 //   });
+
 const scream = new screamToScroll();
-document.getElementById("scream-checkbox").addEventListener("change", (e) => {
+const screamCheckbox = document.getElementById('scream-checkbox')
+// immediately check since Firefox (and potentially other browsers) will keep checkboxes
+// checked if they were checked before refreshing the page 
+if(screamCheckbox.checked) {
+  scream.createScream();
+}
+screamCheckbox.addEventListener("change", (e) => {
   if (e.target.checked) {
     scream.createScream();
   } else {
