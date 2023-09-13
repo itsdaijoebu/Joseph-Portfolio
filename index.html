@@ -73,11 +73,11 @@
 
       <div class="hidden md:flex space-x-12 items-center text-white">
 
-        <a href="#top" class="active-nav-item top">Home</a>
-        <!-- <a href="#about-you" class="about-you">About You</a> -->
-        <a href="#projects" class="projects">Projects</a>
-        <a href="#skills" class="skills">Skills</a>
-        <a href="#contact" class="contact">Contact
+        <a href="#top" class="active-nav-item top named-anchor">Home</a>
+        <!-- <a href="#about-you" class="about-you named-anchor">About You</a> -->
+        <a href="#projects" class="projects named-anchor">Projects</a>
+        <a href="#skills" class="skills named-anchor">Skills</a>
+        <a href="#contact" class="contact named-anchor">Contact
           <!-- <button class="px-6 py-2 bg-button font-bold rounded-xl hover:border-2 hover:bg-highlight-800">
                         Contact
                     </button> -->
@@ -92,11 +92,11 @@
           <span class="scream-label">Scream</span>
         </label> -->
         <!-- <a href="#top" class="top block py-2 px-16 rounded text-lg hover:bg-gray-700">Home</a> -->
-        <a href="#top" class="top block py-2 px-8 rounded text-lg hover:bg-gray-700">Home</a>
-        <!-- <a href="#about-you" class="about block py-2 px-8 rounded text-lg hover:bg-gray-700">About</a> -->
-        <a href="#projects" class="projects block py-2 px-8 rounded text-lg hover:bg-gray-700">Projects</a>
-        <a href="#skills" class="skills block py-2 px-8 rounded text-lg hover:bg-gray-700">Skills</a>
-        <a href="#contact" class="contact block py-2 px-8 rounded text-lg hover:bg-gray-700">Contact</a>
+        <a href="#top" class="top block py-2 px-8 rounded text-lg hover:bg-gray-700 named-anchor">Home</a>
+        <!-- <a href="#about-you" class="about block py-2 px-8 rounded text-lg hover:bg-gray-700 named-anchor">About</a> -->
+        <a href="#projects" class="projects block py-2 px-8 rounded text-lg hover:bg-gray-700 named-anchor">Projects</a>
+        <a href="#skills" class="skills block py-2 px-8 rounded text-lg hover:bg-gray-700 named-anchor">Skills</a>
+        <a href="#contact" class="contact block py-2 px-8 rounded text-lg hover:bg-gray-700 named-anchor">Contact</a>
       </div>
 
       <!-- Mobile button -->
@@ -154,17 +154,17 @@
           You have an <span class="text-accent">idea. </span><br />I can make it
           happen.
         </h1>
-        <div class="btn-container hero items-center justify-center w-full">
+        <div class="btn-container hero items-center justify-center w-full" id="landing-cta">
           <button
             class="btn hero bg-button rounded-xl text-white font-bold flex items-center text-xl hover:border-2 hover:bg-highlight-800">
-            <a href="#contact">
+            <a href="#contact" class="named-anchor">
               Let's talk about it
             </a>
           </button>
 
           <button
             class="btn hero border-accent text-accent rounded-xl font-bold flex items-center border-solid border-2 text-xl hover:bg-highlight-800">
-            <a href="#projects">
+            <a href="#projects" class="named-anchor">
               See what I can do
             </a>
           </button>
@@ -245,7 +245,7 @@
           <div class="flex items-center mt-10 justify-center">
             <div>
               <!-- scrolls to the second project -->
-              <a href="#project-two">
+              <a href="#project-two" class="named-anchor">
                 <button
                   class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-highlight-800">
                   <span class="text-white text-sm font-semimedium">Next</span>
@@ -310,7 +310,7 @@
           <div class="flex items-center mt-10 justify-center">
             <div>
               <!-- scrolls to the third project -->
-              <a href="#project-three">
+              <a href="#project-three" class="named-anchor">
                 <button
                   class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-highlight-800">
                   <span class="text-white text-sm font-semimedium">Next</span>
@@ -380,7 +380,7 @@
           <div class="flex items-center mt-10 justify-center">
             <div>
               <!-- scrolls to the third project -->
-              <a href="#project-four">
+              <a href="#project-four" class="named-anchor">
                 <button
                   class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-highlight-800">
                   <span class="text-white text-sm font-semimedium">Next</span>
@@ -432,7 +432,7 @@
           </video>
           <div class="flex items-center mt-10 justify-center">
             <div>
-              <a href="#project-five">
+              <a href="#project-five" class="named-anchor">
                 <button
                   class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-highlight-800">
                   <span class="text-white text-sm font-semimedium">Next</span>
@@ -490,7 +490,7 @@
           <div class="flex items-center mt-10 justify-center">
             <!-- <div> -->
             <!-- scrolls to the fifth project -->
-            <!-- <a href="#project-five">
+            <!-- <a href="#project-five" class="named-anchor">
                 <button
                   class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:bg-highlight-800">
                   <span class="text-white text-sm font-semimedium">Next</span>
@@ -653,7 +653,7 @@
       </div>
 
     </footer>
-    <a class="flex top-button invisible" href="#top" id="top-button">
+    <a class="flex top-button named-anchor invisible" href="#top" id="top-button">
       <button
         class="p-3 rounded-xl text-white font-bold border-solid border-2 border-accent hover:border-2 hover:bg-highlight-800 absolute bottom-0 right-0 flex flex-col items-center">
         <span class="m_scroll_arrows_up"></span>

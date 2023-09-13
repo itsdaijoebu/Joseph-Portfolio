@@ -3,15 +3,15 @@ const today = new Date();
 // check if user is chromium or not, so it knows which version of scream display to use 
 window.addEventListener("load", () => {
   var prefix = (Array.prototype.slice
-  .call(window.getComputedStyle(document.documentElement, ""))
-  .join("") 
-  .match(/-(moz|webkit|ms)-/))[1];
+    .call(window.getComputedStyle(document.documentElement, ""))
+    .join("")
+    .match(/-(moz|webkit|ms)-/))[1];
 
   // MOZ - FIREFOX (GECKO ENGINE)
   // WEBKIT - CHROME, SAFARI, OPERA, EDGE (WEBKIT ENGINE)
   // MS - OLD INTERNET EXPLORER & EDGE (TRIDENT ENGINE)
   // NOTE - OLD OPERA VERSIONS USE PRESTO ENGINE. PREFIX IS -O
-  if(prefix !== 'webkit') {
+  if (prefix !== 'webkit') {
     document.getElementById('scream-label').classList.remove('hidden');
     document.getElementById('scream-label-svg').classList.add('hidden');
   }
@@ -152,7 +152,7 @@ const scream = new screamToScroll();
 const screamCheckbox = document.getElementById('scream-checkbox')
 // immediately check since Firefox (and potentially other browsers) will keep checkboxes
 // checked if they were checked before refreshing the page 
-if(screamCheckbox.checked) {
+if (screamCheckbox.checked) {
   scream.createScream();
 }
 
@@ -166,7 +166,7 @@ screamCheckbox.addEventListener("change", (e) => {
 // Scream to Scroll
 function screamToScroll() {
   let audioContext;
-  let screamInterval;
+  let screamInterval; // id for the setInterval for the screamToScroll detector, so that it can be cleared
   let highscore = Number(localStorage.getItem("screamScore")) || 0;
   let totalScore = Number(localStorage.getItem("screamTotal")) || 0;
   let sessionScore = 0;
@@ -176,19 +176,46 @@ function screamToScroll() {
   const screamSessionTotal = document.getElementById("scream-session-total");
   const screamTotal = document.getElementById("scream-total");
 
+
   function setPersonalBest(score) {
     document.getElementById("scream-personal-best").textContent = score;
   }
   screamTotal.textContent = totalScore;
   setPersonalBest(highscore);
 
+  // checks if a named anchor link was clicked in order to temporarily disable screamtoscroll, so that named anchors can scroll to their linked areas
+  // without this, screamtoscroll's control over scrolling will stop the named anchor's scroll as soon the mic picks up any sound
+  let isNamedAnchorClicked = false;
+  let namedAnchorTimeoutId;
+  function checkAnchorClick() {
+    isNamedAnchorClicked = true;
+
+    if (namedAnchorTimeoutId) {
+      console.log('clear')
+      clearTimeout(namedAnchorTimeoutId)
+    }
+
+    namedAnchorTimeoutId = setTimeout(() => {
+      isNamedAnchorClicked = false;
+    }, 500)
+  }
+
   return {
+    // creates a listener for sound, and will scroll if it hears it.
+    // the scream is listened for every x ms (was 100 on writing, might've changed since then) with setInterval at end of this block
     createScream: async () => {
       audioContext = new AudioContext();
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: true,
         video: false,
       });
+      // Starts listening for whether any of the buttons were pressed so the scream listener can temporarily be disabled
+      // Otherwise, nav elements don't scroll to the proper place on the page
+      const namedAnchors = Array.from(document.querySelectorAll('.named-anchor'))
+      namedAnchors.forEach(anchor => anchor.addEventListener('click', () => {
+        checkAnchorClick();
+      }))
+
       // audioContext = new AudioContext();
       const mediaStreamAudioSourceNode =
         audioContext.createMediaStreamSource(stream);
@@ -197,6 +224,8 @@ function screamToScroll() {
 
       const pcmData = new Float32Array(analyserNode.fftSize);
       const scream = () => {
+        if (isNamedAnchorClicked) return
+
         analyserNode.getFloatTimeDomainData(pcmData);
         let sumSquares = 0.0;
         for (const amp of pcmData) {
