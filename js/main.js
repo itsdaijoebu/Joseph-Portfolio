@@ -221,7 +221,7 @@ function screamToScroll() {
       mediaStreamAudioSourceNode.connect(analyserNode);
 
       const pcmData = new Float32Array(analyserNode.fftSize);
-      
+
       const scream = () => {
         if (isNamedAnchorClicked) return
 
@@ -250,7 +250,8 @@ function screamToScroll() {
           screamSwitch.classList.remove("scream-tenthousands");
           screamSwitch.classList.remove("scream-tenthousands-ones");
         }
-        if (volume) {
+
+        if (volume > 0.02) {  //have a minimum threshold to prevent bg noise from triggering scrolling
           const scrollDist = Math.floor(Math.pow((volume * 50), 2));
           window.scrollBy(0, scrollDist);
           score += scrollDist;
@@ -281,15 +282,18 @@ function screamToScroll() {
               screamSwitch.classList.add("scream-tenthousands-ones");
             }
           }
-          if (
-            scrollY + 10 >=
-            document.documentElement.scrollHeight -
-            document.documentElement.clientHeight
-          ) {
-            window.scrollTo({
-              top: 0,
-              behavior: "instant",
-            });
+          // tries to only scroll back to top if scrolling is happening because of scream
+          if (scrollDist > 5) {
+            if (
+              scrollY + 10 >=
+              document.documentElement.scrollHeight -
+              document.documentElement.clientHeight
+            ) {
+              window.scrollTo({
+                top: 0,
+                behavior: "instant",
+              });
+            }
           }
         }
       };
