@@ -175,7 +175,7 @@ function screamToScroll() {
   const screamSwitch = document.getElementById("scream-switch");
   const screamSessionTotal = document.getElementById("scream-session-total");
   const screamTotal = document.getElementById("scream-total");
-
+  const namedAnchors = Array.from(document.querySelectorAll('.named-anchor'))
 
   function setPersonalBest(score) {
     document.getElementById("scream-personal-best").textContent = score;
@@ -212,10 +212,7 @@ function screamToScroll() {
       });
       // Starts listening for whether any of the buttons were pressed so the scream listener can temporarily be disabled
       // Otherwise, nav elements don't scroll to the proper place on the page
-      const namedAnchors = Array.from(document.querySelectorAll('.named-anchor'))
-      namedAnchors.forEach(anchor => anchor.addEventListener('click', () => {
-        checkAnchorClick();
-      }))
+      namedAnchors.forEach(anchor => anchor.addEventListener('click', checkAnchorClick))
 
       // audioContext = new AudioContext();
       const mediaStreamAudioSourceNode =
@@ -302,6 +299,7 @@ function screamToScroll() {
     stopScream: () => {
       audioContext.close();
       clearInterval(screamInterval);
+      namedAnchors.forEach(anchor => anchor.removeEventListener('click', checkAnchorClick))
     },
   };
 }
