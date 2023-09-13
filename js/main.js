@@ -183,8 +183,9 @@ function screamToScroll() {
   screamTotal.textContent = totalScore;
   setPersonalBest(highscore);
 
-  // checks if a named anchor link was clicked in order to temporarily disable screamtoscroll, so that named anchors can scroll to their linked areas
-  // without this, screamtoscroll's control over scrolling will stop the named anchor's scroll as soon the mic picks up any sound
+  // checks if a named anchor link was clicked in order to temporarily disable screamtoscroll, so that named anchors can scroll to their linked areas.
+  // without this, screamtoscroll's control over scrolling will stop the named anchor's scroll as soon the mic picks up any sound.
+  // actual check is done at beginning of screamToScroll.scream being called
   let isNamedAnchorClicked = false;
   let namedAnchorTimeoutId;
   function checkAnchorClick() {
@@ -223,6 +224,7 @@ function screamToScroll() {
       mediaStreamAudioSourceNode.connect(analyserNode);
 
       const pcmData = new Float32Array(analyserNode.fftSize);
+      
       const scream = () => {
         if (isNamedAnchorClicked) return
 
