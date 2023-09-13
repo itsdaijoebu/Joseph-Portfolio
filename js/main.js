@@ -251,7 +251,7 @@ function screamToScroll() {
           screamSwitch.classList.remove("scream-tenthousands-ones");
         }
 
-        if (volume > 0.02) {  //have a minimum threshold to prevent bg noise from triggering scrolling
+        if (volume > 0.07) {  //have a minimum threshold to prevent bg noise from triggering scrolling
           const scrollDist = Math.floor(Math.pow((volume * 50), 2));
           window.scrollBy(0, scrollDist);
           score += scrollDist;
